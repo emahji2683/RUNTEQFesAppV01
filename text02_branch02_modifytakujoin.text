@@ -1,0 +1,4 @@
+前回のadd, commit push時の反省
+mainブランチにtakujoin01の変更が反映されてしまった。
+今回はdevelopmentブランチから分岐させdevelopmentブランチに変更をマージしたい。
+
