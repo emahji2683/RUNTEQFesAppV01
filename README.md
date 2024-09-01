@@ -4,6 +4,10 @@
 
 トピさんの記事を見て、環境構築を実行
 
+https://voracious-seahorse-ebe.notion.site/RUNTEQ-render-com-84bf14add1934481951868d67b24b869
+なかやんさんの記事を見て、デプロイを実行
+
+
 
 【実績】
 　START 9:00-
