@@ -1,0 +1,32 @@
+<%= form_with(model: content_list) do |form| %>
+  <% if content_list.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(content_list.errors.count, "error") %> prohibited this content_list from being saved:</h2>
+
+      <ul>
+        <% content_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :repeat_content, style: "display: block" %>
+    <%= form.text_field :repeat_content %>
+  </div>
+
+  <div>
+    <%= form.label :repeat_times, style: "display: block" %>
+    <%= form.number_field :repeat_times %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
