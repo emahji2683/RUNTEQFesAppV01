@@ -1,4 +1,4 @@
-<div id="<%= dom_id content_list %>">
+<div class="border" id="<%= dom_id content_list %>">
   <p>
     <strong>Title:</strong>
     <%= content_list.title %>
@@ -14,4 +14,7 @@
     <%= content_list.repeat_times %>
   </p>
 
+  <p>
+    <%= link_to "Show this content list", content_list %>
+  </p>
 </div>
