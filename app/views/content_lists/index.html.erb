@@ -4,12 +4,9 @@
 
 <h1>Content lists</h1>
 
-<div id="content_lists">
+<div class="flex" id="content_lists">
   <% @content_lists.each do |content_list| %>
     <%= render content_list %>
-    <p>
-      <%= link_to "Show this content list", content_list %>
-    </p>
   <% end %>
 </div>
 

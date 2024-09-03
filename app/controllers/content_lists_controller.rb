@@ -8,6 +8,9 @@ class ContentListsController < ApplicationController
 
   # GET /content_lists/1 or /content_lists/1.json
   def show
+    repeat_content = @content_list.repeat_content
+    repeat_times = @content_list.repeat_times
+    @repeat_string = repeat_string(repeat_content, repeat_times)
   end
 
   # GET /content_lists/new
