@@ -13,6 +13,15 @@
 </div>
 <button id="download">テキストファイルをダウンロード</button>
 
+<h1>音声合成デモ</h1>
+
+<input type="text" id="text-to-speech" placeholder="><%= @content_list.title %>">
+<button onclick="speakText(document.getElementById('text-to-speech').value)">音声を再生</button>
+
+<br>
+
+<button onclick="playSound()">サウンドを再生</button>
+
 <script>
 document.getElementById("download").addEventListener("click", function() {
   const text = "<%= j @repeat_string %>";

@@ -1,4 +1,4 @@
-<%= form_with(model: content_list) do |form| %>
+<%= form_with(model: content_list, local: true) do |form| %>
   <% if content_list.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(content_list.errors.count, "error") %> prohibited this content_list from being saved:</h2>
@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class=" mb-5">
     <%= form.label :title,class:"text-red-700 bg-green-40", style: "display: block" %>

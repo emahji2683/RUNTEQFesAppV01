@@ -1,0 +1,11 @@
+ja:
+  content_lists:
+    new:
+      title: "タイトル"
+    form:
+      title: "タイトル"
+      repeat_content: "リピートコンテンツ"
+      repeat_times: "リピート回数"
+      submit: "送信する"
+
+
