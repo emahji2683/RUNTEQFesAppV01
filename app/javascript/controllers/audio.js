@@ -8,5 +8,15 @@ export function speakText(text) {
   window.speechSynthesis.speak(utterance); // 音声を再生
 }
 
+// 音声波形を生成する関数
+export function playSound() {
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)(); // AudioContextの作成
+  const oscillator = audioContext.createOscillator(); // オシレーター（発振器）の作成
+  oscillator.type = 'sine'; // 波形の種類を指定（'sine'は正弦波）
+  oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // 周波数を設定（440Hz = A4音）
 
+  oscillator.connect(audioContext.destination); // オシレーターをスピーカー（出力）に接続
+  oscillator.start(); // 音の再生開始
+  oscillator.stop(audioContext.currentTime + 2); // 2秒後に再生を停止
+}
 
