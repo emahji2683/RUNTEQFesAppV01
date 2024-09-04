@@ -1,12 +1,14 @@
 <% content_for :title, "Editing content list" %>
+<div class="text-center">
 
-<h1>Editing content list</h1>
-
-<%= render "form", content_list: @content_list %>
-
-<br>
-
-<div>
-  <%= link_to "Show this content list", @content_list %> |
-  <%= link_to "Back to content lists", content_lists_path %>
+  <h1 class="text-3xl font-roboto bg-red-50 mt-8" >Editing content list</h1>
+  
+  <%= render "form", content_list: @content_list %>
+  
+  <br>
+  
+  <div>
+    <%= link_to "Show this content list", @content_list,class:"hover:text-blue-700" %> |
+    <%= link_to "Back to content lists", content_lists_path,class:"hover:text-blue-700" %>
+  </div>
 </div>
