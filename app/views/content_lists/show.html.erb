@@ -1,36 +1,48 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-<p class="xl"><%= @content_list.title %></p>
-<div class="max-w break-words border border-black p-2">
-  <link_to class="responsive-text break-words"><%= @repeat_string %></a>
+<p class="xl text-center text-6xl my-8">
+  <%= @content_list.title %>
+</p>
+<div class="relative">
+  <div style="z-index: -1;" class="absolute z- opacity-50 mx-4  max-w break-words border  p-2 bg-gray-700 text-white ">
+    <link_to class="responsive-text break-words ">
+      <%= @repeat_string %></a>
+  </div>
+</div>
+<div class="text-center my-10 flex flex-col items-center">
+  <div class="p-10 rounded-lg bg-pink-100/50 border-8 border-white">
+    <button id="download" class="px-6 py-2 my-8 text-3xl bg-green-500/50 text-white rounded-3xl ">テキストファイルをダウンロード</button>
+  
+    <div class=" flex flex-col justify-center  p-4 px-5  bg-green-200/90 rounded-md">
+      <h1 class="text-2xl py-3 ">音声合成デモ</h1>
+  
+      <input class="mb-2 p-2 border bounded" type="text" id="text-to-speech" placeholder="><%= @content_list.title %>">
+      <button  onclick="speakText(document.getElementById('text-to-speech').value)" class="my-2 bg-blue-500 text-white rounded hover:bg-blue-600">音声を再生</button>
+  
+      <button onclick="playSound()" class="bg-pink-400/50 text-white rounded hover:bg-pink-500">サウンドを再生</button>
+    </div>
+  
+    <div class="bg-red-50 px-10 mt-5">
+      <%= link_to "Edit this content list" , edit_content_list_path(@content_list),class:"hover:text-blue-700 " %> |
+        <%= link_to "Back to content lists" , content_lists_path,class:"hover:text-blue-700" %>
+  
+          <%= button_to "Destroy this content list" , @content_list, method: :delete,class:"hover:text-blue-700" %>
+    </div>
+  </div>
+
 </div>
 
-<div>
-  <%= link_to "Edit this content list", edit_content_list_path(@content_list) %> |
-  <%= link_to "Back to content lists", content_lists_path %>
-
-  <%= button_to "Destroy this content list", @content_list, method: :delete %>
-</div>
-<button id="download">テキストファイルをダウンロード</button>
-
-<h1>音声合成デモ</h1>
-
-<input type="text" id="text-to-speech" placeholder="><%= @content_list.title %>">
-<button onclick="speakText(document.getElementById('text-to-speech').value)">音声を再生</button>
-
-<br>
-
-<button onclick="playSound()">サウンドを再生</button>
-
-<script>
-document.getElementById("download").addEventListener("click", function() {
-  const text = "<%= j @repeat_string %>";
-  const blob = new Blob([text], {type: "text/plain"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "<%= j @content_list.title %>.txt";
-  a.click();
-  URL.revokeObjectURL(url);
-});
-</script>
+  <script>
+    document.getElementById("download").addEventListener("click", function () {
+      const text = "<%= j @repeat_string %>";
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "<%= j @content_list.title %>.txt";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
