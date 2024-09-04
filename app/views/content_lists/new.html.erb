@@ -1,11 +1,18 @@
+
 <% content_for :title, t("content_lists.new.title") %>
-
 <h1><%= t("content_lists.new.title") %></h1>
+<div class="text-center">
+<% content_for :title, "New content list" %>
 
-<%= render "form", content_list: @content_list %>
+<h1 class="text-3xl font-roboto bg-red-50 mt-8" >New content list</h1>
 
-<br>
-
-<div>
-  <%= link_to "Back to content lists", content_lists_path %>
+<div class="my-8 bg-gray-50 inline-block p-5 rounded-lg ">
+  <%= render "form", content_list: @content_list %>
+</div>
+  
+  <br>
+  
+  <div>
+    <%= link_to "Back to content lists", content_lists_path,class:"hover:text-blue-700" %>
+  </div>
 </div>
