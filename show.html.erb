@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<p class="xl"><%= @content_list.title %></p>
+<div class="max-w break-words border border-black p-2">
+  <link_to class="responsive-text break-words"><%= @repeat_string %></a>
+</div>
+
+<div>
+  <%= link_to "Edit this content list", edit_content_list_path(@content_list) %> |
+  <%= link_to "Back to content lists", content_lists_path %>
+
+  <%= button_to "Destroy this content list", @content_list, method: :delete %>
+</div>
+<button id="download">テキストファイルをダウンロード</button>
+
+<script>
+document.getElementById("download").addEventListener("click", function() {
+  const text = "<%= j @repeat_string %>";
+  const blob = new Blob([text], {type: "text/plain"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "<%= j @content_list.title %>.txt";
+  a.click();
+  URL.revokeObjectURL(url);
+});
+</script>
