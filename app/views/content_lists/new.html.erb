@@ -1,6 +1,6 @@
-<% content_for :title, "New content list" %>
+<% content_for :title, t("content_lists.new.title") %>
 
-<h1>New content list</h1>
+<h1><%= t("content_lists.new.title") %></h1>
 
 <%= render "form", content_list: @content_list %>
 
