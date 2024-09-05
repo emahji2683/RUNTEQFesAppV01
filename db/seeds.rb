@@ -7,4 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-a
+require "csv"
+
+CSV.foreach('db/seeds/csv/content.csv', headers: true) do |row|
+    ContentList.create(
+    title: row['title'],
+    repeat_content: row['repeat_content'],
+    repeat_times: row['repeat_times'])
+end
