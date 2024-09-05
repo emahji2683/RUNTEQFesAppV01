@@ -8,6 +8,10 @@ export function speakText(text) {
   window.speechSynthesis.speak(utterance); // 音声を再生
 }
 
+export function stopSpeech() {
+  window.speechSynthesis.cancel(); // 再生中の音声を停止
+}
+
 // 音声波形を生成する関数
 export function playSound() {
   const audioContext = new (window.AudioContext || window.webkitAudioContext)(); // AudioContextの作成
