@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
       str * times
     end
   end
+  
+  def repeat_string_forsound(str)
+    if str.present?
+      str * 100
+    end
+  end
 end
