@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<%= t ".title" %>
+<% content_for :title, "Content lists" %>
+
+<h1>Content lists</h1>
+
+<div class="flex" id="content_lists">
+  <% @content_lists.each do |content_list| %>
+    <%= render content_list %>
+  <% end %>
+</div>
+
+<%= link_to "New content list", new_content_list_path %>
