@@ -1,6 +1,8 @@
 <div class="border" id="<%= dom_id content_list %>">
   <p>
-    <strong>Title:</strong>
+    
+    <strong><%= t ".title" %></strong>
+
     <%= content_list.title %>
   </p>
 
@@ -15,6 +17,7 @@
   </p>
 
   <p>
-    <%= link_to "Show this content list", content_list %>
+    <%= link_to "Show this content list", content_list_path(content_list) %>
+
   </p>
 </div>

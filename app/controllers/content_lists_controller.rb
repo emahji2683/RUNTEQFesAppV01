@@ -11,6 +11,7 @@ class ContentListsController < ApplicationController
     repeat_content = @content_list.repeat_content
     repeat_times = @content_list.repeat_times
     @repeat_string = repeat_string(repeat_content, repeat_times)
+    @repeat_string_forsound = repeat_string_forsound(repeat_content)
   end
 
   # GET /content_lists/new
@@ -66,8 +67,8 @@ class ContentListsController < ApplicationController
       @content_list = ContentList.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def content_list_params
       params.require(:content_list).permit(:title, :repeat_content, :repeat_times)
     end
+    # Only allow a list of trusted parameters through.
 end
