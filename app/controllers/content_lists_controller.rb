@@ -71,5 +71,4 @@ class ContentListsController < ApplicationController
       params.require(:content_list).permit(:title, :repeat_content, :repeat_times)
     end
     # Only allow a list of trusted parameters through.
-
 end

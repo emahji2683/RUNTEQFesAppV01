@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
   root to: 'content_lists#index'
 
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
