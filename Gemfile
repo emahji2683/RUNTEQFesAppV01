@@ -50,6 +50,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'pry-rails'
 end
 
 group :test do
@@ -60,6 +61,6 @@ end
 
 gem 'rails-i18n'
 
-gem 'pry-rails'
+
 
 
