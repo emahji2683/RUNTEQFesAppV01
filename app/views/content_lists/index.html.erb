@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 <% content_for :title, "Content lists" %>
 
-<h1 class="text-center text-5xl my-20">してみたアプリ</h1>
+<h1 class="text-center text-5xl my-20 font-mono">してみたアプリ</h1>
 <div class="mx-20 rounded-lg " style="background-image: url('https://i0.wp.com/free-texture.net/wp-content/uploads/CorkBoard02.jpg?ssl=1');">
 
   <div class="text-center my-5 flex flex-col justify-center items-center">
     <img src="https://rakugakiicon.com/ri/wp-content/uploads/2015/04/dbdb468af80fe4210b33ffe99813b50b.png" alt="説明文" class="w-5 h-auto transform translate-y-1">
+
     <%= link_to "新たに繰り返す", new_content_list_path, class: "font-ysi  text-2xl bg-red-300 text-white py-3" %>
+
   </div>
   
 
