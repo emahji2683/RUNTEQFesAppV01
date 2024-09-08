@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
   root to: 'content_lists#index'
-
+  get 'show_all_content_lists', to: 'content_lists#show_all'
 
   # Defines the root path route ("/")
   # root "posts#index"
