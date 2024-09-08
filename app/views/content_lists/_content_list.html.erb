@@ -1,12 +1,17 @@
-<div class="border" id="<%= dom_id content_list %>">
-  <p>
-    
+
+<%= link_to(content_list) do%>
+<div class="border bg-gray-100  px-8 pt-5 pb-2 m-2 box6" id="<%= dom_id content_list %>">
+  
+  <p class="font-ysi">
+
     <strong><%= t ".title" %></strong>
 
     <%= content_list.title %>
   </p>
 
+  
   <p>
+
     <strong>Repeat content:</strong>
     <%= content_list.repeat_content %>
   </p>
@@ -19,5 +24,3 @@
   <p>
     <%= link_to "Show this content list", content_list_path(content_list) %>
 
-  </p>
-</div>

@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "mkpop";
+  src: url("assets/851MkPOP_101.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ymg";
+  src: url("assets/Yomogi-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ysi";
+  src: url("assets/YuseiMagic-Regular.ttf") format("truetype");
+}
 
 *,
-*:before,
-*:after {
+*:before{
   box-sizing: border-box;
 }
 
@@ -52,3 +65,21 @@ html {
 .btn-flat:hover span {
   color: #000;
 }
+
+/*めくれたメモ風*/
+.box6 {
+  padding: 1em; /*内側の余白*/
+  background-color: #f0fff0; /*背景色*/
+  position: relative;
+  }
+
+.box6:hover:after{
+  position: absolute;
+  content: '';
+  border-style: solid; /*三角を表示する*/
+  right: 0px; /*三角を右ピッタリ*/
+  top: 0px; /*三角を上ピッタリ*/
+  border-width: 0 30px 30px 0; /*三角のサイズ*/
+  border-color: #CFB3A2 #FFFFFF #CFB3A2; /*三角部分の色*/
+  box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.1); /*三角の影*/
+  }
