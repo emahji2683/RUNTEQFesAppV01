@@ -18,7 +18,8 @@
 }
 
 *,
-*:before{
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -28,8 +29,7 @@ html {
 
 .btn-flat {
   display: inline-block;
-  padding: 1rem 2rem;
-  min-width: 200px;
+  padding: 1.5rem 6rem;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -65,7 +65,6 @@ html {
 .btn-flat:hover span {
   color: #000;
 }
-
 /*めくれたメモ風*/
 .box6 {
   padding: 1em; /*内側の余白*/
@@ -73,6 +72,8 @@ html {
   position: relative;
   }
 
+
+  
 .box6:hover:after{
   position: absolute;
   content: '';
@@ -83,3 +84,4 @@ html {
   border-color: #CFB3A2 #FFFFFF #CFB3A2; /*三角部分の色*/
   box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.1); /*三角の影*/
   }
+

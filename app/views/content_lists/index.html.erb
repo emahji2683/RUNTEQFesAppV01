@@ -1,72 +1,27 @@
 <p style="color: green"><%= notice %></p>
 <% content_for :title, "Content lists" %>
 
-<h1 class="text-center text-5xl my-20 font-mono">してみたアプリ</h1>
-<div class="mx-20 rounded-lg " style="background-image: url('https://i0.wp.com/free-texture.net/wp-content/uploads/CorkBoard02.jpg?ssl=1');">
+<h1 class="text-center text-5xl my-20 font-mono">テキストゴリゴリ屋さん</h1>
 
-  <div class="text-center my-5 flex flex-col justify-center items-center">
-    <img src="https://rakugakiicon.com/ri/wp-content/uploads/2015/04/dbdb468af80fe4210b33ffe99813b50b.png" alt="説明文" class="w-5 h-auto transform translate-y-1">
-
-    <%= link_to "新たに繰り返す", new_content_list_path, class: "font-ysi  text-2xl bg-red-300 text-white py-3" %>
-
-  </div>
-  
 <% if logged_in? %>
-  <div class="flex flex-wrap" id="content_lists">
-    <% @content_lists.each_with_index do |content_list, index| %>
-      <div class="w-1/3 p-2 <%= 'hidden' if index >= 6 %>" id="content_list_<%= index %>">
-        <div class="text-center mt-5  flex flex-col justify-center items-center">
-          <img src="https://rakugakiicon.com/ri/wp-content/uploads/2015/04/ccc01d14ceac423cd1e2c774a83c7f29.png" alt="説明文" class="w-5 h-auto transform translate-y-1">
-        </div>
-        <%= render content_list %>
-      </div>
-    <% end %>
+<turbo-frame id="tab-content">
+  <%= render "shared/board" , content_lists: @content_lists.limit(6) %>
+</turbo-frame>
 <% end %>
-  </div>
-</div>
 
 <!-- トグルボタン -->
 <% if @content_lists.size > 6 %>
-<div class="text-center">
-  <button id="toggle-btn" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 text-center">
-    もっと見る
-  </button>
-<div>
+  <turbo-frame id="toggle-button-frame">
+    <div class="text-center">
+     <%= render "shared/toggle_button",show_more:true  %>
+    </div>
+  </turbo-frame>
 <% end %>
 
-<div class="bg-green-400 my-10">
+<div class="bg-red-400 text-white my-10 text-center mx-3 ">
  <h2 class="text-2xl py-3">使い方</h2>
+ 
  <p class="py-8">このアプリにたどり着いた血迷った貴様に繰り返しの極意を授けよう</p>
  <div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggleButton = document.getElementById('toggle-btn');
-    let isShowingMore = false;
-
-    if (toggleButton) {
-      toggleButton.addEventListener('click', function() {
-        const hiddenItems = document.querySelectorAll('#content_lists .hidden');
-        const visibleItems = document.querySelectorAll('#content_lists div:not(.hidden)');
-        
-        if (isShowingMore) {
-          // 閉じるときは5件以降のアイテムを再度隠す
-          visibleItems.forEach(function(item, index) {
-            if (index > 18) {
-              item.classList.add('hidden');
-            }
-          });
-        } else {
-          // もっと見るときはすべてのアイテムを表示
-          hiddenItems.forEach(function(item) {
-            item.classList.remove('hidden');
-          });
-        }
-
-        isShowingMore = !isShowingMore;
-        toggleButton.textContent = isShowingMore ? '閉じる' : 'もっと見る';
-      });
-    }
-  });
-</script>

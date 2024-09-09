@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
+  get 'show_all_content_lists', to: 'content_lists#show_all'
+
 
   # Defines the root path route ("/")
   # root "posts#index"

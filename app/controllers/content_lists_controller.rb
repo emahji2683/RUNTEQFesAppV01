@@ -8,6 +8,17 @@ class ContentListsController < ApplicationController
     @content_lists = ContentList.all
   end
 
+  def show_all
+    @content_lists = ContentList.all
+    # 全コンテンツを表示し、ボタンを閉じるに変更
+    render turbo_stream: [
+      turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists }),
+      turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button', locals: { show_more: false })
+    ]
+  end
+
+  
+
   # GET /content_lists/1 or /content_lists/1.json
   def show
     repeat_content = @content_list.repeat_content

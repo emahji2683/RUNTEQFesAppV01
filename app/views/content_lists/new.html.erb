@@ -10,61 +10,12 @@
   
   <br>
   
-  <div>
-  <%= link_to content_lists_path, class: "btn-flat" do %>
-    <span>コンテンツ一覧</span>
-  <% end %>
-</div>
+
+<%= render "shared/button",text:"コンテンツ一覧",path: root_path  %>
+
 
 <style>
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
-html {
-  font-size: 100%;
-}
-
-.btn-flat {
-  display: inline-block;
-  padding: 1.5rem 6rem;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  background: #0f6879;
-  border-radius: 0;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.5s ease-in-out, background 0.3s ease-in-out;
-}
-
-.btn-flat span {
-  position: relative;
-  z-index: 1;
-}
-
-.btn-flat:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150%;
-  height: 500%;
-  content: "";
-  background: #fd9c00;
-  transform: translateX(-85%) translateY(-25%) rotate(45deg);
-  transition: transform 0.5s ease-in-out;
-}
-
-.btn-flat:hover:before {
-  transform: translateX(-9%) translateY(-25%) rotate(45deg);
-}
-
-.btn-flat:hover span {
-  color: #000;
-}
 </style>
 
 </div>

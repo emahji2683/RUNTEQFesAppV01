@@ -13,12 +13,16 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module", defer: true %>
   </head>
 
-  <body class="  bg-[url('https://img.freepik.com/free-vector/simple-green-gradient-background-vector-for-business_53876-175740.jpg?w=740&t=st=1725635454~exp=1725636054~hmac=7bac11f49c89238720f6b460da1d95fa4efedbc4ce42110e453497a39716d53b')] bg-cover bg-center h-auto w-full">
+
+  <body class="bg-[url('https://img.freepik.com/free-vector/simple-green-gradient-background-vector-for-business_53876-175740.jpg?w=740&t=st=1725635454~exp=1725636054~hmac=7bac11f49c89238720f6b460da1d95fa4efedbc4ce42110e453497a39716d53b')] bg-cover bg-center bg-fixed min-h-screen">
     <%= render "shard/navigation" %>
     <%= yield %>
   </body>
+  
+  
 </html>
