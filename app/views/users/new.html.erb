@@ -1,1 +1,5 @@
-test
+<% if logged_in? %>
+  <%= render 'users/logged_in' %>
+<% else %>
+  <%= render 'users/not_logged_in' %>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="bg-green-500 bg-opacity-100 p-2 relative z-20">
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, class: "text-gray-100 p-10 relative z-20 bg-opacity-400", data: { turbo_method: :delete, turbo_confirm: " 本当にログアウトしますか？"} %>
+<% else %>
+  <%= link_to "Log in", login_path, class: "text-2xl text-gray-100" %>
+  <%= link_to "Sign up", signup_path, class: "text-2xl text-gray-100" %>
+<% end %>
+</div>
