@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
   root to: 'content_lists#index'
+  get "signup", to: "users#new"
+  resources :users, except: [:new]
 
 
   # Defines the root path route ("/")
