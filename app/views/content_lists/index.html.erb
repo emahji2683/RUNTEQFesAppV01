@@ -3,9 +3,11 @@
 
 <h1 class="text-center text-5xl my-20 font-mono">テキストゴリゴリ屋さん</h1>
 
+<% if logged_in? %>
 <turbo-frame id="tab-content">
   <%= render "shared/board" , content_lists: @content_lists.limit(6) %>
 </turbo-frame>
+<% end %>
 
 <!-- トグルボタン -->
 <% if @content_lists.size > 6 %>

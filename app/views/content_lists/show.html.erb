@@ -23,7 +23,7 @@
     <div class=" flex flex-col justify-center  p-4 px-5  bg-green-200/90 rounded-md ">
       <h1 class="text-2xl py-3 ">音声合成デモ</h1>
   
-      <input class="mb-2 p-2 border bounded" type="text" id="text-to-speech" value="<%= @repeat_string_forsound %>" readonly>
+      <input class="mb-2 p-2 border bounded" type="text" id="text-to-speech" value="<%= @repeat_string_forsound %>" readonly><
       <button onclick="speakText(document.getElementById('text-to-speech').value)" class="flex items-center justify-center my-2 bg-blue-500 text-white rounded hover:bg-blue-600">
         <span class="material-symbols-outlined  ">
         volume_up
@@ -40,9 +40,7 @@
                    target: '_blank', 
                    class: "my-2 bg-pink-400/50 text-white rounded hover:text-blue-700 flex items-center justify-center" do %>
         <i style='color: #3399FF;'></i>何回も呟いた努力の結晶を人にひけらかす
-      <% end %>
-    </div>
-    
+      <% end %>    
     </div>
   
     <div class="bg-red-50 px-10 mt-5">

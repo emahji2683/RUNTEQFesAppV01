@@ -1,6 +1,8 @@
 class ContentListsController < ApplicationController
   before_action :set_content_list, only: %i[ show edit update destroy ]
-
+  before_action :require_user, except: [:new, :create]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+  
   # GET /content_lists or /content_lists.json
   def index
     @content_lists = ContentList.all
@@ -37,7 +39,7 @@ class ContentListsController < ApplicationController
   # POST /content_lists or /content_lists.json
   def create
     @content_list = ContentList.new(content_list_params)
-
+    @content_list.user_id = current_user.id
     respond_to do |format|
       if @content_list.save
         format.html { redirect_to content_list_url(@content_list), notice: "Content list was successfully created." }

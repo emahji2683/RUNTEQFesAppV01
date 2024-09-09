@@ -59,7 +59,11 @@ group :test do
 end
 
 gem 'rails-i18n'
+gem "bcrypt"
 
+group :development do
+  gem 'pry-byebug'
+end
 
 
 
