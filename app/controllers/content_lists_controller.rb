@@ -1,8 +1,8 @@
 class ContentListsController < ApplicationController
-  before_action :set_content_list, only: %i[ show edit update destroy ]
+  before_action :set_content_list, only: %i[show edit update destroy]
   before_action :require_user, except: [:new, :create]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  
+
   # GET /content_lists or /content_lists.json
   def index
     @content_lists = ContentList.all
@@ -10,14 +10,11 @@ class ContentListsController < ApplicationController
 
   def show_all
     @content_lists = ContentList.all
-    # 全コンテンツを表示し、ボタンを閉じるに変更
     render turbo_stream: [
       turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists }),
       turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button', locals: { show_more: false })
     ]
   end
-
-  
 
   # GET /content_lists/1 or /content_lists/1.json
   def show
@@ -75,13 +72,21 @@ class ContentListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_content_list
-      @content_list = ContentList.find(params[:id])
-    end
 
-    def content_list_params
-      params.require(:content_list).permit(:title, :repeat_content, :repeat_times)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_content_list
+    @content_list = ContentList.find(params[:id])
+  end
+
+  def content_list_params
+    params.require(:content_list).permit(:title, :repeat_content, :repeat_times)
+  end
+
+  # ユーザーがコンテンツの作成者であることを確認
+  def require_same_user
+    if current_user.id != @content_list.user_id
+      flash[:alert] = "許可されていない操作です。プロフィールの編集、削除は作成者ご自身のみ可能です。"
+      redirect_to content_lists_url
     end
-    # Only allow a list of trusted parameters through.
+  end
 end
