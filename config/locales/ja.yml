@@ -7,5 +7,9 @@ ja:
       repeat_content: "リピートコンテンツ"
       repeat_times: "リピート回数"
       submit: "送信する"
+  notice:
+    create: "ボードを作成しました" 
+    update: "ボードを更新しました" 
+    destroy: "ボードを削除しました" 
 
 

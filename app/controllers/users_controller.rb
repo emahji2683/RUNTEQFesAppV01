@@ -40,6 +40,11 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: "ユーザーアカウントを削除しました。", status: :see_other # Rails 7 から必須のオプション
   end
 
+  def postbycurrent
+    @user = User.find(params[:id])
+    @content_lists = ContentList.where(user_id: params[:id])
+  end
+
   private
 
   def set_user
