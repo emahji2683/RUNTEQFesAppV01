@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<% content_for :title, "Content lists" %>
+
+<h1 class="text-center text-5xl my-20 font-mono">テキストゴリゴリ屋さん</h1>
+
+<% if logged_in? %>
+<turbo-frame id="tab-content">
+  <%= render "shared/board", content_lists: @content_lists.limit(6) %>
+</turbo-frame>
+<% end %>
+
+<!-- トグルボタン -->
+<% if @content_lists.size > 6 %>
+  <turbo-frame id="toggle-button-frame">
+    <div class="text-center">
+     <%= render "shared/toggle_button", show_more:true %>
+    </div>
+  </turbo-frame>
+<% end %>
+
+<div class="bg-red-400 text-white my-10 text-center mx-3 ">
+ <h2 class="text-2xl py-3">使い方</h2>
+ 
+ <p class="py-8">このアプリにたどり着いた血迷った貴様に繰り返しの極意を授けよう</p>
+ <div>
+</div>
+
