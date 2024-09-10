@@ -18,10 +18,15 @@ class ContentListsController < ApplicationController
 
   # GET /content_lists/1 or /content_lists/1.json
   def show
-    repeat_content = @content_list.repeat_content
-    repeat_times = @content_list.repeat_times
-    @repeat_string = repeat_string(repeat_content, repeat_times)
-    @repeat_string_forsound = repeat_string_forsound(repeat_content)
+      repeat_content = @content_list.repeat_content
+      repeat_times = @content_list.repeat_times
+      # 生成した文字列
+      long_string = repeat_string(repeat_content, repeat_times)
+      # チャンクサイズを設定
+      chunk_size = 10_000 # 一度に処理する文字数
+      # チャンクに分割
+      @chunks = split_string(long_string, chunk_size)
+      @repeat_string_forsound = repeat_string_forsound(repeat_content)
   end
 
   # GET /content_lists/new

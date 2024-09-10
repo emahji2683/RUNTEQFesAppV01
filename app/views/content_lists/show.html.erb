@@ -10,7 +10,13 @@
 <div class="relative">
   <div style="z-index: -1;" class="md:text-xl lg:text-2xl lx:3xl   absolute  opacity-50 mx-4  max-w break-words border  p-2 bg-gray-700 text-white ">
     <link_to class="responsive-text break-words ">
-      <%= @repeat_string %>
+      <div id="content">
+    <% @chunks.each do |chunk| %>
+      <div class="chunk">
+        <%= chunk.html_safe %>
+      </div>
+    <% end %>
+</div>
   </div>
 </div>
 
@@ -88,6 +94,7 @@
     </div>
   </div>
 </div>
+
 
 
 

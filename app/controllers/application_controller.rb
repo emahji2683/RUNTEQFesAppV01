@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
       str * times
     end
   end
+
+  def split_string(str, chunk_size)
+    str.chars.each_slice(chunk_size).map(&:join)
+  end
   
   def repeat_string_forsound(str)
     if str.present?
