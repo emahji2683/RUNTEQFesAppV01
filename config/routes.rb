@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "sessions/new"
   resources :content_lists
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,7 +12,16 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
   root to: 'content_lists#index'
+  get "signup", to: "users#new"
+  resources :users, except: [:new]
+
+  # Session用のルートティングを設定
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
+
   get 'show_all_content_lists', to: 'content_lists#show_all'
+
 
   # Defines the root path route ("/")
   # root "posts#index"
