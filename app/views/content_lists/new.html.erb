@@ -1,23 +1,38 @@
-<% content_for :title, t("content_lists.new.title") %>
-<h1><%= t("content_lists.new.title") %></h1>
-<div class="text-center">
 <% content_for :title, "New content list" %>
 
-<h1 class="text-3xl font-roboto bg-red-50 mt-8" >新規作成</h1>
+<div class="paper">
+</div>
 
-  <%= render "form", content_list: @content_list %>
+<div class="text-center relative z-10">
+  <h1 class="rerative p-4 pl-8 rounded-lg text-3xl font-roboto bg-red-50 mt-28"
+    style="
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 0.7em;
+    border-radius: 50px 0 0 50px;
+    background-color: #2589d0;
+    color: #fff;">
 
-  
+    <span style="
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 13px;
+    border-radius: 50%;
+    background: #fff;
+    vertical-align: middle;"></span>
+
+    
+  </h1>
+
+  <div class="mt-20"> 
+    <%= render "form", content_list: @content_list %>
+  </div>
+
   <br>
-  
 
 <%= render "shared/button",text:"コンテンツ一覧",path: root_path  %>
-
-
 <style>
 
-</style>
-
-</div>
 
 
