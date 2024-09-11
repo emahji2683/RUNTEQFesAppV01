@@ -27,6 +27,7 @@ class ContentListsController < ApplicationController
       # チャンクに分割
       @chunks = split_string(long_string, chunk_size)
       @repeat_string_forsound = repeat_string_forsound(repeat_content)
+      @repeat_string = repeat_string(repeat_content, repeat_times)
   end
 
   # GET /content_lists/new
