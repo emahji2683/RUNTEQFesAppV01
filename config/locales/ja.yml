@@ -11,5 +11,7 @@ ja:
     create: "ボードを作成しました" 
     update: "ボードを更新しました" 
     destroy: "ボードを削除しました" 
+    loginsuccess: "ログインに成功しました"
+    loginfail: "ログインに失敗しました"
 
 

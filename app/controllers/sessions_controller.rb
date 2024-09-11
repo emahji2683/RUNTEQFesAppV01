@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       redirect_to root_path, status: :see_other
+      flash[:notice] = t('notice.loginsuccess')
     else
-      flash.now[:error] = "ログインに失敗しました"
+      flash[:notice] = t('notice.loginfail')
       render "new", status: :unprocessable_entity
     end
   end
