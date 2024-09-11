@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "sessions/new"
   resources :content_lists
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
-  root to: 'content_lists#index'
+  root to: 'toppage#home'
   get "signup", to: "users#new"
   resources :users, except: [:new]
 
