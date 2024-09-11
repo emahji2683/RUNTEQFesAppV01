@@ -73,7 +73,7 @@ html {
   }
 
 
-  
+
 .box6:hover:after{
   position: absolute;
   content: '';
@@ -98,5 +98,86 @@ html {
   background-color: #ddd;
   background-size: 32px 32px;
   clip-path: polygon(0 70%, 100% 30%, 100% 100%, 0% 100%);
-  z-index: 1; 
+  z-index: 1;
   pointer-events: none;}
+
+  /* ホワイトボード */
+
+  .is-style-whiteboard1 {
+    position: relative;
+    margin: 0 auto 2em;
+    padding: 2em 1.5em;
+    border: 10px solid transparent;
+    border-radius: 4px;
+    background: linear-gradient(white, white), linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 0 / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 0 / 30px 30px, linear-gradient(#e6e6e6, #e6e6e6);   
+    background-clip: padding-box, border-box, border-box, border-box, border-box, border-box;
+    background-origin: border-box;
+  }
+  .is-style-whiteboard1:before,
+  .is-style-whiteboard1:after ,
+  .is-style-whiteboard1 .wp-block-group__inner-container:before,
+  .is-style-whiteboard1 .wp-block-group__inner-container:after {
+    display: inline-block;
+    position: absolute;
+    content: "";
+  }
+  .is-style-whiteboard1:before {
+    right: 10px;
+    bottom: 16px;
+    width: 52px;
+    height: 8px;
+    border-radius: 2px 2px 0 0;
+    background: #5a95f5;
+  }
+  .is-style-whiteboard1:after {
+    right: 11px;
+    bottom: 1px;
+    width: 50px;
+    height: 15px;
+    border-radius: 0 0 4px 4px;
+    background: #d2e2fc;
+  }
+  .is-style-whiteboard1 .wp-block-group__inner-container:before {
+    right: 71px;
+    bottom: 1px;
+    width: 48px;
+    height: 8px;
+    background: linear-gradient(90deg, #ea4335 8%, #f2f2f2 8%, #f2f2f2 70%, #ea4335 70%);
+  }
+  .is-style-whiteboard1 .wp-block-group__inner-container:after {
+    right: 98px;
+    bottom: 9px;
+    width: 48px;
+    height: 8px;
+    background: linear-gradient(90deg, #333 8%, #f2f2f2 calc(8% + 1px), #f2f2f2 70%, #333 calc(70% + 1px));
+    transform: rotate(-20deg);
+  }
+
+  /* 黒板風BOX ---------- */
+.blackbord{
+  position: relative;
+  margin: 2em auto;
+  padding: 1em 1.5em; /* 内部余白（上下 | 左右） */
+  background: #006633; /* 黒板の色 */
+  border: 8px solid #b2771f; /* 黒板の縁の色 */
+  color: #fff; /* 文字の色 */
+  font-size: 18px; /* 文字のサイズ */
+}
+.blackbord::before,
+.blackbord::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+}
+.blackbord::before {
+  right: 10px;
+  border: solid 3px #ededed; /*チョーク（白）*/
+  width: 20px;
+  border-radius: 3px 2px 0 2px;
+}
+.blackbord::after {
+  right: 40px;
+  border: solid 3px #ffff6b; /*チョーク（黄色）*/
+  width: 15px;
+  border-radius: 8px 5px 2px 5px;
+}

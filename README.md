@@ -3,7 +3,8 @@
 目的：ユーザーログイン機能の実装
 URL：https://plog.kobacchi.com/rails-user-authentication-overview/
 
-
+目的：ゲストユーザーログイン機能の実装
+URL：https://plog.kobacchi.com/rails-guest-login-account-share/
 
 ](https://topilog.notion.site/Docker-tailwind-PostgreSQL-rails-new-c7cb022e88a44129b979b081d28a001e#a73244d9863a44ff9a0f133e9e7fd26e)
 

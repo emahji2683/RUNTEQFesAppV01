@@ -14,15 +14,18 @@ Rails.application.routes.draw do
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
   root to: 'toppage#home'
   get "signup", to: "users#new"
-  resources :users, except: [:new]
-
+  resources :users, except: [:new] do
+    member do
+      get :postbycurrent 
+    end
+  end
   # Session用のルートティングを設定
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
   get 'show_all_content_lists', to: 'content_lists#show_all'
-
+  post "guest_login", to: "guest_sessions#create"
 
   # Defines the root path route ("/")
   # root "posts#index"

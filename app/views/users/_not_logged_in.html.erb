@@ -1,21 +1,30 @@
 <h1>Sign up</h1>
+<div class="blackbord w-[70%] max-w-[900px]">
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_with(model: @user) do |f| %>
+      <div class="mb-5">
+        <%= f.label :name %>
+        <%= f.text_field :name ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
+      <div class="mb-5">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "bg-[#006633] block w-full bg-white border  border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none" %>
+      </div>
+      <div class="mb-5">
+        <%= f.label :password %>
+        <%= f.password_field :password ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
+      <div class="mb-5">
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.submit "新規作成", class: "hover:bg-[#006633]" %>
+      <% end %>
+    </div>
   </div>
 </div>
