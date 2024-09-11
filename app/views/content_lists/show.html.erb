@@ -5,17 +5,17 @@
   <%= @content_list.title %>
 </p>
 
-<div class="relative">
-  <div style="z-index: -1;" class="md:text-xl lg:text-2xl lx:3xl   absolute  opacity-50 mx-4  max-w break-words border  p-2 bg-gray-700 text-white ">
-    <link_to class="responsive-text break-words ">
+<div class=" relative flex justify-center ">
+  <div style="z-index: -1;" class="md:text-xl lg:text-2xl lx:3xl  absolute  w-[95%] max-w-full break-words opacity-50  border  bg-gray-700 text-white ">
       <div id="content">
-      <% @chunks.each do |chunk| %>
-        <div class="chunk">
-          <%= chunk.html_safe %>
-        </div>
-      <% end %>
+        <% @chunks.each do |chunk| %>
+          <div class="m-2 chunk text-center">
+            <%= chunk.html_safe %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
+
 </div>
 
 <div class="fixed inset-0 flex items-center justify-center">
@@ -23,7 +23,7 @@
     <button id="download" class="px-6 py-2 my-8 text-3xl bg-green-500/50 text-white rounded-3xl flex items-center justify-center"><span class="material-symbols-outlined">
       download
       </span>テキストファイルをダウンロード</button>
-  
+
     <div class=" flex flex-col justify-center  p-4 px-5  bg-green-200/90 rounded-md ">
       <h1 class="text-2xl py-3 ">音声でも繰り返してみる</h1>
 
@@ -37,7 +37,7 @@
               play_circle
             </span>
           </button>
-          <span class="text-sm text-center -mt-2">さいせい</span> 
+          <span class="text-sm text-center -mt-2">さいせい</span>
         </div>
 
         <!-- 停止ぼたん -->
@@ -46,20 +46,20 @@
             stop_circle
             </span>
           </button>
-          <span class="text-sm text-center -mt-2">ていし</span> 
+          <span class="text-sm text-center -mt-2">ていし</span>
         </div>
       </div>
 
-      <hr class="border-t-2 border-dashed border-gray-400"> <!-- てんせん -->
+      <hr class="border-t-2 border-dashed border-gray-400"> <!-- てんせん -->        
 
       <div class="flex justify-center space-x-12">
       <button onclick="copyUrlTitle()" class="my-2 bg-green-500/50   hover:bg-green-600 text-white rounded  flex items-center justify-center"><span class="material-symbols-outlined">
           content_copy
           </span>URLをコピー</button>
-    
+
       <div class="flex justify-center"> <!-- Flexコンテナで中央揃え -->
-      <%= link_to "https://twitter.com/share?url=#{request.url}&text=【RUNTEQ祭アプリ】%0a#{@content_list.title}を超絶繰り返しました", 
-                   target: '_blank', 
+      <%= link_to "https://twitter.com/share?url=#{request.url}&text=【RUNTEQ祭アプリ】%0a#{@content_list.title}を超絶繰り返しました",
+                   target: '_blank',
                    class: "my-2 bg-pink-400/50 text-white rounded hover:text-blue-700 flex items-center justify-center" do %>
 
         <img src="<%= asset_path('logo-black.png') %>" alt="X(旧twitterアイコン)" class="w-4 h-4" />
@@ -72,7 +72,7 @@
     <div class="bg-red-50 px-10 mt-5">
       <div class="flex justify-center space-x-12">
         <!-- へんしゅうぼたーん -->
-        <%= link_to edit_content_list_path(@content_list),class:"bg-pink-400 rounded hover:text-blue-700 flex items-center space-x-1 px-2 py-1" do %> 
+        <%= link_to edit_content_list_path(@content_list),class:"bg-pink-400 rounded hover:text-blue-700 flex items-center space-x-1 px-2 py-1" do %>
           <span class="material-symbols-outlined text-white">
             edit
           </span>
@@ -87,7 +87,7 @@
           <span>しょうきょ</span>
         <% end %>        
           </div>
-          <%= render "shared/button",text:"コンテンツ一覧",path: root_path  %>
+          <%= render "shared/button",text:"コンテンツ一覧",path: root_path  %>       
     </div>
   </div>
 </div>
@@ -104,4 +104,3 @@ document.getElementById("download").addEventListener("click", function() {
   URL.revokeObjectURL(url);
 });
 </script>
-
