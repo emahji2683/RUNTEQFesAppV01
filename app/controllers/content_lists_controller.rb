@@ -27,6 +27,7 @@ class ContentListsController < ApplicationController
       # チャンクに分割
       @chunks = split_string(long_string, chunk_size)
       @repeat_string_forsound = repeat_string_forsound(repeat_content)
+      @repeat_string = repeat_string(repeat_content, repeat_times)
   end
 
   # GET /content_lists/new
@@ -44,7 +45,8 @@ class ContentListsController < ApplicationController
     @content_list.user_id = current_user.id
     respond_to do |format|
       if @content_list.save
-        format.html { redirect_to content_list_url(@content_list), notice: "Content list was successfully created." }
+        flash[:notice] = t('notice.create')
+        format.html { redirect_to content_list_url(@content_list) }
         format.json { render :show, status: :created, location: @content_list }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,7 +59,8 @@ class ContentListsController < ApplicationController
   def update
     respond_to do |format|
       if @content_list.update(content_list_params)
-        format.html { redirect_to content_list_url(@content_list), notice: "Content list was successfully updated." }
+        flash[:notice] = t('notice.update')
+        format.html { redirect_to content_list_url(@content_list) }
         format.json { render :show, status: :ok, location: @content_list }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -71,7 +74,8 @@ class ContentListsController < ApplicationController
     @content_list.destroy!
 
     respond_to do |format|
-      format.html { redirect_to content_lists_url, notice: "Content list was successfully destroyed." }
+      flash[:notice] = t('notice.destroy')
+      format.html { redirect_to content_lists_url }
       format.json { head :no_content }
     end
   end
