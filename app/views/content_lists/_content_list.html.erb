@@ -1,9 +1,11 @@
 
-<%= link_to content_list_path(content_list),data: { turbo: false } do %>
+<%= link_to content_list_path(content_list),data: { turbo: false } do%>
 <div class="border bg-gray-100  px-8 pt-5 pb-2 m-2 box6" id="<%= dom_id content_list %>">
-
+  
   <p class="font-ysi">
+
     <strong><%= t ".title" %></strong>
+
     <%= content_list.title %>
   </p>
   
@@ -19,7 +21,9 @@
 
   <p>
     <strong>お名前:</strong>
-    <%= content_list.user.name %>
+    
   </p>
+
+   
   </div>
 <% end %>
