@@ -1,8 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: red" class="px-6 bg-green-300 "><%= notice %></p>
 <% content_for :title, "Content lists" %>
-
-<h1 class="text-center text-5xl my-20 font-mono">テキストゴリゴリ屋さん</h1>
-
+<div class= "text-center flex items-center justify-center">
+<%= image_tag "ゴリゴリ_テキスト屋さん_1.png", width: "1400"%>
+</div>
 <% if logged_in? %>
 <turbo-frame id="tab-content">
   <%= render "shared/board" , content_lists: @content_lists.limit(6) %>
