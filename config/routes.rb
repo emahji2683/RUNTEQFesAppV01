@@ -11,10 +11,15 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   resources :content_lists, only: [:new, :create, :edit, :update, :destroy, :show], params: :title
+
+
   root to: 'content_lists#index'
   get "signup", to: "users#new"
-  resources :users, except: [:new]
-
+  resources :users, except: [:new] do
+    member do
+      get :postbycurrent 
+    end
+  end
   # Session用のルートティングを設定
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"

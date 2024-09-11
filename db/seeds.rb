@@ -13,5 +13,6 @@ CSV.foreach('db/seeds/csv/content.csv', headers: true) do |row|
     ContentList.create(
     title: row['title'],
     repeat_content: row['repeat_content'],
-    repeat_times: row['repeat_times'])
+    repeat_times: row['repeat_times'],
+    user_id: row['user_id'])
 end
