@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :postbycurrent 
     end
   end
+  
   # Session用のルートティングを設定
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
