@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
 
   get 'show_all_content_lists', to: 'content_lists#show_all'
-
+  post "guest_login", to: "guest_sessions#create"
 
   # Defines the root path route ("/")
   # root "posts#index"

@@ -23,7 +23,6 @@
 
       <div class="text-center">
         <%= f.submit "Log in", class: "mt-4 px-4 py-2 border border-black text-black rounded" %>
-      
         </div>
 
     <% end %>
@@ -33,4 +32,5 @@
       <div class="w-12 h-1 bg-red-500 rounded-sm"></div>
     </div>
   </div>
+  <%= link_to "ゲストログイン(お試し)", guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } %>
 </div>
