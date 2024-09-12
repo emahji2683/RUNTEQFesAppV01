@@ -72,7 +72,6 @@ class ContentListsController < ApplicationController
   # DELETE /content_lists/1 or /content_lists/1.json
   def destroy
     @content_list.destroy!
-
     respond_to do |format|
       flash[:notice] = t('notice.destroy')
       format.html { redirect_to content_lists_url }
@@ -94,7 +93,7 @@ class ContentListsController < ApplicationController
   # ユーザーがコンテンツの作成者であることを確認
   def require_same_user
     if current_user.id != @content_list.user_id
-      flash[:alert] = "許可されていない操作です。プロフィールの編集、削除は作成者ご自身のみ可能です。"
+      flash[:notice] = "ご自身の投稿のみ編集、削除できます。"
       redirect_to content_lists_url
     end
   end
