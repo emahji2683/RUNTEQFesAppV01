@@ -192,9 +192,10 @@ html {
 
 /* 手書きみたいなボタン */
 .btn-pen{
-  padding: .5em 1em;
+  padding: .7em 2em;
+  font-size: 1.2em;
   background: #fff;
-  border-radius: 10px 50px/50px 10px;
+  border-radius: 12px 60px/60px 12px;
   border: solid 2px #333;
 }
 
@@ -228,3 +229,7 @@ html {
 	border-width: 26px;
 	margin-left: -26px;
 }
+
+
+
+

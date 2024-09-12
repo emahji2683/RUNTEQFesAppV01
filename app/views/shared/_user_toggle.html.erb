@@ -1,0 +1,9 @@
+
+<div class="text-center">
+
+  <% if show_more %>
+    <%= button_to 'あああ', user_all_path,  remote: true, class: 'bg-blue-500 text-white px-4 py-2 rounded mt-4', id: 'user-all-btn' %>     
+  <% else %>
+    <%= button_to '閉じる', user_six_path, remote: true, class: 'bg-red-500 text-white px-4 py-2 rounded mt-4', id: 'toggle-btn' %>
+  <% end %>
+</div>

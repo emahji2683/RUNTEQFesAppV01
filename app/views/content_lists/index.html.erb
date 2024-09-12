@@ -1,21 +1,20 @@
-<% content_for :title, "ゴリゴリテキスト屋さん" %>
+<p style="color: red" class="px-6 bg-green-300 "><%= notice %></p>
+<% content_for :title, "Content lists" %>
 <div class= "text-center flex items-center justify-center">
 <%= image_tag "ゴリゴリ_テキスト屋さん_1.png", width: "1400"%>
 </div>
 <% if logged_in? %>
 <turbo-frame id="tab-content">
-  <%= render "shared/board" , content_lists: @content_lists.limit(6) %>
+  <%= render "shared/board" , content_lists: @content_lists %>
 </turbo-frame>
 <% end %>
 
 <!-- トグルボタン -->
-<% if @content_lists.size > 6 %>
   <turbo-frame id="toggle-button-frame">
     <div class="text-center">
-     <%= render "shared/toggle_button",show_more:true  %>
+     <%= render "shared/toggle_button",show_more:true,switch:true  %>
     </div>
   </turbo-frame>
-<% end %>
 
 <div class="bg-red-400 text-white my-10 text-center mx-3 ">
  <h2 class="text-2xl py-3">使い方</h2>

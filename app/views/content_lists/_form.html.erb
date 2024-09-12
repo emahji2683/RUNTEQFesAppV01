@@ -1,7 +1,7 @@
-<div class="my-20 bg-yellow-200 inline-block text-left p-5 rounded-lg relative"> 
+<div class="my-20 bg-yellow-200 inline-block p-5 rounded-lg relative  md:w-1/2 w-[80%] max-w-[1000px]"> 
 
   <% if content_list.errors.any? %>
-  <div class="absolute bg-yellow-200 p-6 rounded-md shadow-lg -top-60 -right-40 transform -rotate-6 w-64 max-w-md">
+  <div class="absolute bg-yellow-200 p-6 rounded-md shadow-lg -top-60 -right-20 transform -rotate-6 w-64 max-w-md">
     <h2 class="text-red-700"><%= pluralize(content_list.errors.count, "error") %> prohibited this content_list from being saved:</h2>
     <ul class="text-red-700">
       <% content_list.errors.each do |error| %>
@@ -11,24 +11,27 @@
   </div>
   <% end %>
 
+
   <%= form_with(model: content_list, local: true) do |form| %>
-    <div class="mb-5">
-      <%= form.label :title, class: "text-red-700", style: "display: block" %>
-      <%= form.text_field :title, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-80 h-10 focus:outline-none" %>
-    </div>
+    <div class="flex flex-col px-5 ">
+      <div class=" mb-5 ">
+        <%= form.label :title, class: "text-left block text-red-700 md:text-xl lg:text-2xl" %>
+        <%= form.text_field :title, class: " bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus:outline-none" %>
+      </div>
   
-    <div class="mb-5">
-      <%= form.label :repeat_content, style: "display: block" %>
-      <%= form.text_field :repeat_content, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-80 h-10 focus:outline-none" %>
-    </div>
+      <div class="mb-5 ">
+        <%= form.label :repeat_content,class: "text-left block  md:text-xl lg:text-2xl" %>
+        <%= form.text_field :repeat_content, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus:outline-none" %>
+      </div>
   
-    <div class="">
-      <%= form.label :repeat_times, style: "display: block" %>
-      <%= form.number_field :repeat_times, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-80 h-10 focus:outline-none" %>
-    </div>
+      <div class="">
+        <%= form.label :repeat_times, class: "text-left block  md:text-xl lg:text-2xl" %>
+        <%= form.number_field :repeat_times, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus:outline-none" %>
+      </div>
   
     <div class="mt-4 text-center">
       <%= form.submit "Submit", class: "btn-pen " %>
     </div>
+
   <% end %>
 </div>
