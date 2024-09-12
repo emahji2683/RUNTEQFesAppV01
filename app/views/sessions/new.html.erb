@@ -1,5 +1,4 @@
-<% content_for :title, "login"%>
-
++  <% content_for :title, "ゴリゴリテキスト屋さん" %>
   <div class = "text-center mt-20 mb-10">
     <span class = "text-3xl mt-20">ロ</span>
     <span class = "text-3xl mt-20">グ</span>
@@ -8,7 +7,7 @@
   </div>
 
 
-  <div class="wp-block-group is-style-whiteboard1 w-[70%] max-w-[900px] lg:text-xl md:text-base sm:text-sm ">
+  <div class="wp-block-group is-style-whiteboard1 w-[70%] max-w-[900px] ">
     <div class="wp-block-group__inner-container">
       <%= form_with url: login_path, scope: :session, local: true do |f| %>
 
@@ -30,7 +29,7 @@
     </div>
   </div>
     <div class="text-center">
-      <%= link_to "ゲストログイン(お試し)", guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } %>
+    <%= link_to "ゲストログイン(お試し)", guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } %>
     </div>
   </div>
 
