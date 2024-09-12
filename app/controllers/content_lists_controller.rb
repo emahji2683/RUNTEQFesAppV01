@@ -18,16 +18,39 @@ class ContentListsController < ApplicationController
 
   # GET /content_lists/1 or /content_lists/1.json
   def show
-      repeat_content = @content_list.repeat_content
-      repeat_times = @content_list.repeat_times
-      # 生成した文字列
-      long_string = repeat_string(repeat_content, repeat_times)
-      # チャンクサイズを設定
-      chunk_size = 10_000 # 一度に処理する文字数
-      # チャンクに分割
-      @chunks = split_string(long_string, chunk_size)
-      @repeat_string_forsound = repeat_string_forsound(repeat_content)
-      @repeat_string = repeat_string(repeat_content, repeat_times)
+    repeat_content = @content_list.repeat_content
+    repeat_times = @content_list.repeat_times
+  
+    # 生成した文字列
+    long_string = repeat_string(repeat_content, repeat_times)
+  
+    # 改行位置でチャンクを分割するメソッドを使う
+    chunk_size = 10_000 # チャンクサイズ
+    @chunks = split_string_by_newline(long_string, chunk_size)
+  
+    @repeat_string_forsound = repeat_string_forsound(repeat_content)
+    @repeat_string = repeat_string(repeat_content, repeat_times)
+  end
+  
+  # 改行位置で文字列を分割するメソッド
+  def split_string_by_newline(string, max_chunk_size)
+    chunks = []
+    current_chunk = ""
+  
+    string.each_line do |line|
+      # 現在のチャンクに新しい行を追加してもサイズが許容されるか確認
+      if (current_chunk.size + line.size) > max_chunk_size
+        chunks << current_chunk
+        current_chunk = line # 新しいチャンクを開始
+      else
+        current_chunk += line
+      end
+    end
+  
+    # 最後のチャンクを追加
+    chunks << current_chunk unless current_chunk.empty?
+    
+    chunks
   end
 
   # GET /content_lists/new
