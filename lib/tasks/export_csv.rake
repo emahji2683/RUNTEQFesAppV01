@@ -1,5 +1,5 @@
 # lib/tasks/export_csv.rake
-require 'csv'
+require "csv"
 
 namespace :db do
   desc "Export data to CSV"
@@ -8,7 +8,7 @@ namespace :db do
     data = ContentList.all
 
     # CSV ファイルのパスを指定
-    CSV.open('db/exports/your_data.csv', 'w') do |csv|
+    CSV.open("db/exports/your_data.csv", "w") do |csv|
       # ヘッダー行を書き込む
       csv << data.first.attributes.keys
 

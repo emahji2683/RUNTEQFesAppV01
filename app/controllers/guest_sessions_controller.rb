@@ -9,5 +9,4 @@ class GuestSessionsController < ApplicationController
       flash[:notice] = "ゲストユーザーとしてログインしました"
       redirect_to root_path
     end
-  end
-  
+end

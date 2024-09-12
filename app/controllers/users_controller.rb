@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:new, :create]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [ :show, :edit, :update, :destroy ]
+  before_action :require_user, except: [ :new, :create ]
+  before_action :require_same_user, only: [ :edit, :update, :destroy ]
 
   def index
     @users = User.all
@@ -48,8 +48,8 @@ class UsersController < ApplicationController
   def show_all
     @content_lists = ContentList.where(user_id: params[:id])
     render turbo_stream: [
-      turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists }),
-      turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button_users', locals: { show_more: false })
+      turbo_stream.replace("tab-content", partial: "shared/board", locals: { content_lists: @content_lists }),
+      turbo_stream.replace("toggle-button-frame", partial: "shared/toggle_button_users", locals: { show_more: false })
     ]
   end
 
