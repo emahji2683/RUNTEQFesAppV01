@@ -8,6 +8,14 @@
 
 <div class="mt-4 blackbord w-[70%] max-w-[900px]">
 
+  <% if @user.errors.any? %>
+    <% @user.errors.each do |error| %>
+      <ul class="text-[#FF79D2]">
+      <li><%= error.full_message %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3 lg:text-xl md:text-base sm:text-sm ">
       <%= form_with(model: @user) do |f| %>
