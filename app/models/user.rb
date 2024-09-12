@@ -11,7 +11,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
-  
+
   # password のバリデーション
   has_secure_password
   validates :password, presence: true,
@@ -19,4 +19,3 @@ class User < ApplicationRecord
                       allow_nil: true
   has_many :content_lists, dependent: :destroy
 end
-

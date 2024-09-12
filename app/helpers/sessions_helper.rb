@@ -20,7 +20,7 @@ module SessionsHelper
       redirect_to login_path
     end
   end
-  
+
 
   # ログアウトする（セッション情報を削除する）
   def log_out
@@ -28,4 +28,3 @@ module SessionsHelper
     @current_user = nil
   end
 end
-

@@ -1,4 +1,3 @@
-<p style="color: red" class="px-6 bg-green-300 "><%= notice %></p>
 <% content_for :title, "Content lists" %>
 <div class= "text-center flex items-center justify-center">
 <%= image_tag "ゴリゴリ_テキスト屋さん_1.png", width: "1400"%>
@@ -15,22 +14,28 @@
      <%= render "shared/toggle_button",show_more:true,switch:true  %>
     </div>
   </turbo-frame>
+<div class="flex justify-center font-ymg font-semibold">
 
-<div class="bg-red-400 text-white my-10 text-center mx-3 ">
- <h2 class="text-2xl py-3">使い方</h2>
- 
- <p class="py-8">このアプリにたどり着いた血迷った貴様に繰り返しの極意を授けよう</p>
- <p class="">極意①：好きな言葉をテキストとして出力できるんダナ</p>
- <p class="">極意②：好きな言葉を繰り返した結果を結果ページに出力できるんダナ</p>
- <p class="">極意③：好きな言葉を繰り返したページをURL、Xでみんなに共有出来るんダナ</p>
- <p class="">極意④：好きな言葉をくり返しし音声でも楽しめるんダナ</p>
-
- <p class="">【作成方法】</p>
- <p class="">①新たに繰り返すを押す</p>
- <p class="">②ボード名、繰り返したい文字列、その回数を入力(1,000,000万回上限)</p>
- <p class="">③提出を押すと繰り返し画面に遷移</p>
- <p class="">↓！繰り返し結果を閲覧、ダウンロード、共有できる！↓</p>
-
- <div>
+  <div class="my-10 text-center mx-3 max-w-[1200px] sm:w-[70%] w-[90%] bg-white box dashed-note ">
+   <h2 class="text-3xl py-3">使い方</h2>
+   
+   <p class="py-8">このアプリにたどり着いた血迷った貴様に繰り返しの極意を授けよう</p>
+   <div class="text-left text-lg sm:text-xl lg:text-2xl py-5 inline-block">
+     <p class="block">極意①：好きな言葉をテキストとして出力できるんダナ</p>
+     <p class="block">極意②：好きな言葉を繰り返した結果を結果ページに出力できるんダナ</p>
+     <p class="block">極意③：好きな言葉を繰り返したページをURL、Xでみんなに共有出来るんダナ</p>
+     <p class="block">極意④：好きな言葉をくり返しし音声でも楽しめるんダナ</p>
+   </div>
+   
+   <h2 class="text-3xl">【作成方法】</h2>
+   <div class="text-left text-lg sm:text-xl lg:text-2xl py-5 inline-block">
+     <p class="">①新たに繰り返すを押す</p>
+     <p class="">②ボード名、繰り返したい文字列、その回数を入力(1,000,000万回上限)</p>
+     <p class="">③提出を押すと繰り返し画面に遷移</p>
+     <p class="">↓！繰り返し結果を閲覧、ダウンロード、共有できる！↓</p>
+   </div>
+  
+   
+  </div>
 </div>
 

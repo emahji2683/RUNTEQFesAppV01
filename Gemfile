@@ -58,12 +58,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'rails-i18n'
+gem "rails-i18n"
 gem "bcrypt"
 
 group :development do
-  gem 'pry-byebug'
+  gem "pry-byebug"
 end
-
-
-
