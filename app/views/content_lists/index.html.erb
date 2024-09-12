@@ -12,7 +12,7 @@
 <% if @content_lists.size > 6 %>
   <turbo-frame id="toggle-button-frame">
     <div class="text-center">
-     <%= render "shared/toggle_button",show_more:true  %>
+     <%= render "shared/toggle_button",show_more:true,content_lists: @content_lists  %>
     </div>
   </turbo-frame>
 <% end %>

@@ -1,12 +1,14 @@
-<div class="flex justify-center">
-<div class=" rounded-lg max-w-[1200px] sm:w-[70%] w-[90%]" style="background-image: url('https://i0.wp.com/free-texture.net/wp-content/uploads/CorkBoard02.jpg?ssl=1');">
+<div class="flex justify-center ">
+  <div class="flex flex-col rounded-lg max-w-[1200px] sm:w-[70%] w-[90%] my-5" style="background-image: url('https://i0.wp.com/free-texture.net/wp-content/uploads/CorkBoard02.jpg?ssl=1');">
 
-    <div class=" text-center my-5 flex flex-col justify-center items-center ">
-      <img src="https://rakugakiicon.com/ri/wp-content/uploads/2015/04/dbdb468af80fe4210b33ffe99813b50b.png" alt="説明文" class="w-5 h-auto transform translate-y-1 z-10 relative">
-
-      <%= link_to "新たに繰り返す", new_content_list_path, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box",data: { turbo: false } %>
-  
-    </div>
+      <div class=" text-center my-5 flex  justify-center items-center space-x-[100px]">
+         <%= link_to "新たに繰り返す", new_content_list_path, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box",data: { turbo: false } %>
+         <% if(@switch) %>
+           <%= link_to "あなたの投稿", user_six_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box", data: { turbo_method: :get} %>
+         <% else %>
+          <%= link_to "投稿一覧",  root_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box", data: { turbo_method: :get} %>
+         <% end %>
+      </div>
     
     <div class="flex sm:flex-row flex-wrap flex-col" id="content_lists">
       <% content_lists.each_with_index do |content_list, index| %>
@@ -18,5 +20,8 @@
         </div>
       <% end %>
     </div>
+
   </div>
+</div>
+
 </div>

@@ -25,8 +25,12 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  get 'show_all_content_lists', to: 'content_lists#show_all'
   get 'show_all_users', to: 'users#show_all'
+
+  get 'show_all', to: 'content_lists#show_all'
+  get 'user_six', to: 'content_lists#user_six'
+  get 'user_all', to: 'content_lists#user_all'
+
   post "guest_login", to: "guest_sessions#create"
 
   # Defines the root path route ("/")

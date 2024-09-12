@@ -6,6 +6,7 @@ class ContentListsController < ApplicationController
   # GET /content_lists or /content_lists.json
   def index
     @content_lists = ContentList.all
+    @switch = true
   end
 
   def show_all
@@ -15,6 +16,24 @@ class ContentListsController < ApplicationController
       turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button', locals: { show_more: false })
     ]
   end
+
+  def user_six
+    @content_lists = ContentList.where(user: current_user).limit(6)
+    @switch = false
+    render turbo_stream: [
+      turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists}),
+      turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button', locals: { show_more: true })
+    ]
+  end
+
+  def user_all
+    @content_lists = ContentList.where(user: current_user)
+    render turbo_stream: [
+      turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists }),
+      turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button', locals: { show_more: false })
+    ]
+  end
+  
 
   # GET /content_lists/1 or /content_lists/1.json
   def show
