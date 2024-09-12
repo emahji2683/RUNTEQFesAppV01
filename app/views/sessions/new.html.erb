@@ -1,10 +1,9 @@
 +  <% content_for :title, "ゴリゴリテキスト屋さん" %>
   <div class = "text-center mt-20 mb-10">
-    <span class = "text-3xl mt-20">ロ</span>
-    <span class = "text-3xl mt-20">グ</span>
-    <span class = "text-3xl mt-20">イ</span>
-    <span class = "text-3xl mt-20">ン</span>
+    <span class = "text-3xl">ログイン</span>
+
   </div>
+
 
 
   <div class="wp-block-group is-style-whiteboard1 w-[70%] max-w-[900px] ">
@@ -29,7 +28,10 @@
     </div>
   </div>
     <div class="text-center">
-    <%= link_to "ゲストログイン(お試し)", guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } %>
-    </div>
+    <%= link_to guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } do %>
+      <span class="material-symbols-outlined">Person</span>
+      <span>ゲストログイン(お試し)</span>
+    <% end %>
+          </div>
   </div>
 

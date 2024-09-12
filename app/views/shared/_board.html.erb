@@ -4,9 +4,9 @@
       <div class=" text-center my-5 flex  justify-center items-center space-x-[100px]">
          <%= link_to "新たに繰り返す", new_content_list_path, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box",data: { turbo: false } %>
          <% if(@switch) %>
-           <%= link_to "あなたの投稿", user_six_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box", data: { turbo_method: :get} %>
+           <%= link_to "あなたの投稿", user_six_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box" %>
          <% else %>
-          <%= link_to "投稿一覧",  root_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box", data: { turbo_method: :get} %>
+          <%= link_to "投稿一覧",  root_path,method: :get, remote: true, class: "font-ysi text-2xl sm:text-3xl  bg-red-300 text-white py-3 px-2 arrow_box"%>
          <% end %>
       </div>
     
