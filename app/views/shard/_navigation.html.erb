@@ -5,7 +5,6 @@
     <p class="text-right ml-auto mx-5"><%= "#{current_user.name}様ようこそ"%></p> 
     <%= link_to "投稿一覧", postbycurrent_user_path(current_user.id), class: "text-gray-100 z-20 bg-opacity-400 hover:text-blue-500", data: { turbo_method: :get} %>
   </div>
-
 <% else %>
   <div class = "flex justify-end space-x-4">
     <%= link_to "ログイン", login_path, class: "text-2xl text-gray-100 hover:text-blue-500" %>

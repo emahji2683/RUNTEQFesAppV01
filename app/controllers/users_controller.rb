@@ -45,6 +45,15 @@ class UsersController < ApplicationController
     @content_lists = ContentList.where(user_id: params[:id])
   end
 
+  def show_all
+    @content_lists = ContentList.where(user_id: params[:id])
+    render turbo_stream: [
+      turbo_stream.replace('tab-content', partial: 'shared/board', locals: { content_lists: @content_lists }),
+      turbo_stream.replace('toggle-button-frame', partial: 'shared/toggle_button_users', locals: { show_more: false })
+    ]
+  end
+
+
   private
 
   def set_user
