@@ -3,7 +3,6 @@ require 'csv'
 # CSVファイルからデータを読み込む
 user_csv_file = 'db/seeds/csv/user.csv'
 content_csv_file = 'db/seeds/csv/content.csv'
-content_csv_file2 = 'db/seeds/csv/your_data.csv'
 
 # ユーザーデータのシード
 CSV.foreach(user_csv_file, headers: true) do |row|
