@@ -7,12 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-require "csv"
+require 'csv'
 
-CSV.foreach('db/seeds/csv/content.csv', headers: true) do |row|
-    ContentList.create(
-    title: row['title'],
-    repeat_content: row['repeat_content'],
-    repeat_times: row['repeat_times'],
-    user_id: row['user_id'])
+# テストデータとしてのCSVファイル名
+filename = "test.csv"
+
+CSV.foreach("db/seeds/csv/#{filename}", headers: true) do |row|
+  # user_idを全て1に設定し、他のカラムはCSVから読み込み
+  ContentList.find_or_create_by(id: row['id']) do |content|
+    content.title = row['title']
+    content.repeat_content = row['repeat_content']
+    content.repeat_times = row['repeat_times']
+    content.user_id = 1  # user_idを1に固定
+    content.created_at = row['created_at']
+    content.updated_at = row['updated_at']
+  end
 end
+
