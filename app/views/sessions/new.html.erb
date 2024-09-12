@@ -1,4 +1,4 @@
-+  <% content_for :title, "ゴリゴリテキスト屋さん" %>
+  <% content_for :title, "ゴリゴリテキスト屋さん" %>
   <div class = "text-center mt-20 mb-10">
     <span class = "text-3xl">ログイン</span>
 
@@ -7,10 +7,10 @@
 
 
   <div class="wp-block-group is-style-whiteboard1 w-[70%] max-w-[900px] ">
-    <div class="wp-block-group__inner-container">
+    <div class="wp-block-group__inner-container text-lg sm:text-xl lg:text-2xl">
       <%= form_with url: login_path, scope: :session, local: true do |f| %>
 
-      <div class="mb-5">
+      <div class="mb-5 ">
         <%= f.label :email, class: "block" %>
         <%= f.email_field :email, class: "block w-full bg-white border-b-4 border-red-500 focus:border-blue-500 w-80 h-10 focus:outline-none" %>
       </div>
@@ -21,17 +21,17 @@
       </div>
 
       <div class="text-center">
-        <%= f.submit "ログイン", class: "mt-4 px-4 py-2 border border-black text-black rounded" %>
+        <%= f.submit "ログイン", class: "cursor-pointer mt-4 px-4 py-2 border border-black text-black rounded" %>
       </div>
 
     <% end %>
     </div>
   </div>
-    <div class="text-center">
-    <%= link_to guest_login_path, class:"bg-white mt-4 px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } do %>
-      <span class="material-symbols-outlined">Person</span>
-      <span>ゲストログイン(お試し)</span>
-    <% end %>
-          </div>
+    <div class="text-center text-lg sm:text-xl lg:text-2xl mt-[50px]">
+      <%= link_to guest_login_path, class:"bg-white px-4 py-2 border border-black text-black rounded", data: { turbo_method: :post } do %>
+        <span class="material-symbols-outlined">Person</span>
+        <span>ゲストログイン(お試し)</span>
+      <% end %>
+    </div>
   </div>
 

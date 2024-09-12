@@ -13,23 +13,24 @@
       <%= form_with(model: @user) do |f| %>
       <div class="mb-5">
         <%= f.label :name %>
-        <%= f.text_field :name ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+        <%= f.text_field :name ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
       </div>
       <div class="mb-5">
         <%= f.label :email %>
-        <%= f.email_field :email, class: "bg-[#006633] block w-full bg-white border  border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none" %>
+        <%= f.email_field :email, class: "bg-[#006633] block w-full  border  border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none" %>
       </div>
       <div class="mb-5">
         <%= f.label :password %>
-        <%= f.password_field :password ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+        <%= f.password_field :password ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
       </div>
       <div class="mb-5">
 
         <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation ,class: "bg-[#006633] block w-full bg-white border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+        <%= f.password_field :password_confirmation ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
       </div>
-      <div  class="text-center hover:text-blue-500">
-        <%= f.submit "新規作成" %>
+
+      <div  class="text-center hover:text-blue-500 cursor-pointer text-2xl">
+        <%= f.submit "新規作成" ,class:"cursor-pointer"%>
       </div>
       <% end %>
     </div>
