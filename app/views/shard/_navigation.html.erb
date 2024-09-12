@@ -1,13 +1,14 @@
-<div class="bg-green-500 bg-opacity-100 p-2 relative z-20">
+<div class="bg-green-500 bg-opacity-100 p-2 relative z-20 h-20">
 <% if logged_in? %>
   <div class="text-gray-100 p-4 flex z-20 bg-opacity-400 justify-between">
-    <%= link_to "ログアウト", logout_path, class: "text-gray-100 z-20 bg-opacity-400", data: { turbo_method: :delete, turbo_confirm: "本当にログアウトしますか？" } %>
-    <p class="text-right ml-auto pr-4"><%= "#{current_user.name}様ようこそ" %></p>
-    <%= link_to "投稿一覧", postbycurrent_user_path(current_user), class: "text-gray-100 z-20 bg-opacity-400 pr-2" %>
+    <%= link_to "ログアウト", logout_path, class: "text-gray-100 z-20 bg-opacity-400 hover:text-blue-500", data: { turbo_method: :delete, turbo_confirm: "本当にログアウトしますか？" } %>
+    <p class="text-right ml-auto mx-5"><%= "#{current_user.name}様ようこそ"%></p> 
+    <%= link_to "投稿一覧", postbycurrent_user_path(current_user.id), class: "text-gray-100 z-20 bg-opacity-400 hover:text-blue-500", data: { turbo_method: :get} %>
   </div>
-
 <% else %>
-  <%= link_to "ログイン", login_path, class: "text-2xl text-gray-100" %>
-  <%= link_to "新規登録", signup_path, class: "text-2xl text-gray-100" %>
+  <div class = "flex justify-end space-x-4">
+    <%= link_to "ログイン", login_path, class: "text-2xl text-gray-100 hover:text-blue-500" %>
+    <%= link_to "新規登録", signup_path, class: "text-2xl text-gray-100 hover:text-blue-500" %>
+  </div>
 <% end %>
 </div>

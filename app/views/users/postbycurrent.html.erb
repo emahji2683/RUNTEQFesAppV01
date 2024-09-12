@@ -1,6 +1,8 @@
 <% content_for :title, "#{current_user.name}さんの投稿一覧" %>
 
-<h1 class="text-center text-5xl my-20 font-mono"><%= "#{current_user.name}さんの投稿一覧" %></h1>
+<div class= "text-center flex items-center justify-center">
+<%= image_tag "ゴリゴリ_テキスト屋さん_1.png", width: "1400"%>
+</div>
 
 <% if logged_in? %>
 <turbo-frame id="tab-content">

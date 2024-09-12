@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to user_url(@user), notice: "ようこそ、Sample Blog へ！"
+      redirect_to root_path, notice: "ようこそ、Sample Blog へ！"
     else
       render :new, status: :unprocessable_entity # Rails 7 から必須のオプション
     end
