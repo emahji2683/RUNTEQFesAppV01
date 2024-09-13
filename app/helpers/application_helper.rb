@@ -7,14 +7,14 @@ module ApplicationHelper
       charset: 'utf-8',
       description: 'ゴリゴリテキスト屋さんでテキストを作ろう',
       keywords: 'ゴリラ',
-      canonical: request.original_url,
+      canonical: 'https://runteqfesappv01-jf24.onrender.com/',
       separator: '|',
       og: {
         site_name: :site,
         title: :title,
         description: :description,
         type: 'website',
-        url: request.original_url,
+        url: 'https://runteqfesappv01-jf24.onrender.com/',
         image: image_url('goricard.png'), # 配置するパスやファイル名によって変更すること
         local: 'ja-JP'
       },
