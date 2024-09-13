@@ -230,6 +230,14 @@ html {
 	margin-left: -26px;
 }
 
+.arrow_box:hover {
+  border-color: #0888ff; /* 変更後のふちの色 */
+}
+
+.arrow_box:hover:before {
+  border-top-color: #0888ff; /* 変更後のふちの色 */
+}
+
 
 /* ノートっぽいやつ */
 .dashed-note {
