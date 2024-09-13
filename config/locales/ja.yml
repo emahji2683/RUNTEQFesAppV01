@@ -7,5 +7,16 @@ ja:
       repeat_content: "リピートコンテンツ"
       repeat_times: "リピート回数"
       submit: "送信する"
+  notice:
+    create: "ボードを作成しました"  
+    loginsuccess: "ログインに成功しました"
+    loginfail: "ログインに失敗しました"
+    update: "更新に成功しました。"
+    destroy: "削除に成功しました。"
+    unupdate: "更新に失敗しました。"
+    undestroy: "削除に失敗しました。"   
+  alert:
+    unupdate: "更新に失敗しました。"
+    undestroy: "削除に失敗しました。" 
 
 

@@ -1,0 +1,10 @@
+<!-- shared/_toggle_button.html.erb -->
+<div class="text-center">
+ <% if switch %>
+  <% if show_more %>
+      <%= button_to 'もっと見る', show_all_path, method: :get, remote: true, class: 'bg-blue-500 text-white px-4 py-2 rounded mt-4 text-base sm:text-3xl' %>
+  <% else %>
+      <%= button_to '閉じる', content_lists_path, method: :get, remote: true, class: 'bg-red-500 text-white px-4 py-2 rounded mt-4 text-base sm:text-3xl' %>
+  <% end %>
+ <% end %>
+</div>

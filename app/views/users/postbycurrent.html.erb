@@ -1,0 +1,16 @@
+<% content_for :title, "#{current_user.name}さんの投稿一覧" %>
+
+<div class= "text-center flex items-center justify-center">
+<%= image_tag "ゴリゴリ_テキスト屋さん_1.png", width: "1400"%>
+</div>
+
+<% if logged_in? %>
+<turbo-frame id="tab-content">
+  <%= render "shared/board", content_lists: @content_lists %>
+</turbo-frame>
+<% end %>
+
+<div class="flex flex-col justify-center  p-4 px-5  bg-green-200/90 rounded-md">
+<%= link_to "コンテンツ一覧", content_lists_path, class: "flex flex-col justify-center  p-4 px-5  bg-green-200/90 rounded-md" %>
+</div>
+

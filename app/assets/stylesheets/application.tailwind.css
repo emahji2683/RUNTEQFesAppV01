@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "mkpop";
+  src: url("assets/851MkPOP_101.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ymg";
+  src: url("assets/Yomogi-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ysi";
+  src: url("assets/YuseiMagic-Regular.ttf") format("truetype");
+}
 
 *,
 *:before,
@@ -15,8 +29,7 @@ html {
 
 .btn-flat {
   display: inline-block;
-  padding: 1rem 2rem;
-  min-width: 200px;
+  padding: 1.5rem 6rem;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -51,4 +64,246 @@ html {
 
 .btn-flat:hover span {
   color: #000;
+}
+/*めくれたメモ風*/
+.box6 {
+  padding: 1em; /*内側の余白*/
+  background-color: #f0fff0; /*背景色*/
+  position: relative;
+  }
+
+
+
+.box6:hover:after{
+  position: absolute;
+  content: '';
+  border-style: solid; /*三角を表示する*/
+  right: 0px; /*三角を右ピッタリ*/
+  top: 0px; /*三角を上ピッタリ*/
+  border-width: 0 30px 30px 0; /*三角のサイズ*/
+  border-color: #CFB3A2 #FFFFFF #CFB3A2; /*三角部分の色*/
+  box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.1); /*三角の影*/
+  }
+
+/*方眼紙*/
+.paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, transparent 31px, #333 32px),
+                    linear-gradient(90deg, transparent 31px, #333 32px);
+  background-color: #ddd;
+  background-size: 32px 32px;
+  clip-path: polygon(0 70%, 100% 30%, 100% 100%, 0% 100%);
+  z-index: 1;
+  pointer-events: none;}
+
+  /* ホワイトボード */
+
+  .is-style-whiteboard1 {
+    position: relative;
+    margin: 0 auto 2em;
+    padding: 2em 1.5em;
+    border: 10px solid transparent;
+    border-radius: 4px;
+    background: linear-gradient(white, white), linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 0 / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 0 / 30px 30px, linear-gradient(#e6e6e6, #e6e6e6);   
+    background-clip: padding-box, border-box, border-box, border-box, border-box, border-box;
+    background-origin: border-box;
+  }
+  .is-style-whiteboard1:before,
+  .is-style-whiteboard1:after ,
+  .is-style-whiteboard1 .wp-block-group__inner-container:before,
+  .is-style-whiteboard1 .wp-block-group__inner-container:after {
+    display: inline-block;
+    position: absolute;
+    content: "";
+  }
+  .is-style-whiteboard1:before {
+    right: 10px;
+    bottom: 16px;
+    width: 52px;
+    height: 8px;
+    border-radius: 2px 2px 0 0;
+    background: #5a95f5;
+  }
+  .is-style-whiteboard1:after {
+    right: 11px;
+    bottom: 1px;
+    width: 50px;
+    height: 15px;
+    border-radius: 0 0 4px 4px;
+    background: #d2e2fc;
+  }
+  .is-style-whiteboard1 .wp-block-group__inner-container:before {
+    right: 71px;
+    bottom: 1px;
+    width: 48px;
+    height: 8px;
+    background: linear-gradient(90deg, #ea4335 8%, #f2f2f2 8%, #f2f2f2 70%, #ea4335 70%);
+  }
+  .is-style-whiteboard1 .wp-block-group__inner-container:after {
+    right: 98px;
+    bottom: 9px;
+    width: 48px;
+    height: 8px;
+    background: linear-gradient(90deg, #333 8%, #f2f2f2 calc(8% + 1px), #f2f2f2 70%, #333 calc(70% + 1px));
+    transform: rotate(-20deg);
+  }
+
+  /* 黒板風BOX ---------- */
+.blackbord{
+  position: relative;
+  margin: 2em auto;
+  padding: 1em 1.5em; /* 内部余白（上下 | 左右） */
+  background: #006633; /* 黒板の色 */
+  border: 8px solid #b2771f; /* 黒板の縁の色 */
+  color: #fff; /* 文字の色 */
+  font-size: 18px; /* 文字のサイズ */
+}
+.blackbord::before,
+.blackbord::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+}
+.blackbord::before {
+  right: 10px;
+  border: solid 3px #ededed; /*チョーク（白）*/
+  width: 20px;
+  border-radius: 3px 2px 0 2px;
+}
+.blackbord::after {
+  right: 40px;
+  border: solid 3px #ffff6b; /*チョーク（黄色）*/
+  width: 15px;
+  border-radius: 8px 5px 2px 5px;
+}
+
+.centered-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* 確実に最前面に表示されるように */
+}
+
+/* 手書きみたいなボタン */
+.btn-pen{
+  padding: .7em 2em;
+  font-size: 1.2em;
+  background: #fff;
+  border-radius: 12px 60px/60px 12px;
+  border: solid 2px #333;
+}
+
+/* ふきだし */
+.arrow_box {
+	position: relative;
+	background: #ed6661;
+	border: 4px solid #b0d0f5;
+  z-index: 0;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(237, 102, 97, 0);
+	border-top-color: #ed6661;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.arrow_box:before {
+	border-color: rgba(176, 208, 245, 0);
+	border-top-color: #b0d0f5;
+	border-width: 26px;
+	margin-left: -26px;
+}
+
+.arrow_box:hover {
+  border-color: #0888ff; /* 変更後のふちの色 */
+}
+
+.arrow_box:hover:before {
+  border-top-color: #0888ff; /* 変更後のふちの色 */
+}
+
+
+/* ノートっぽいやつ */
+.dashed-note {
+  background-color: #f5f5f5; /* 背景色 */
+  background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #f5f5f5 50%, #f5f5f5 100%), /* 点線1の色 */
+                    linear-gradient(180deg, #ccc 1px, transparent 1px); /* 点線2の色と太さ */
+  background-size: 8px 100%, /* 点線1のサイズ */
+                   100% 2.5em; /* 点線2のサイズ */
+  
+  line-height: 2.5em; /* 文字の高さ */
+  padding-bottom: 1px; /* 最終行の下にも罫線を引く */
+}
+
+.note2{
+  color: #696969;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 1px #e6e6e6;
+  padding: 0.3em 1em 2em 1em;
+  box-shadow:2px 2px 0 rgba(0,0,0,.1);
+}
+.sen2{
+  background-color: #fff;
+  background-image:
+  linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
+  background-size: 100% 2em;
+  line-height: 2em;
+  padding: 2em 1em 0.2em 1em;
+}
+
+/* テープ */
+.pic-background {
+  background-size: cover;
+  background-position: center;
+  background-image: var(--pic-image-data, none);
+  
+}
+
+.box {
+  position: relative;
+  padding: 1.5rem 1rem 0.6rem;
+  border-radius: 10px;
+  border: 1rem solid #535353;
+  background-color: white;
+}
+
+
+
+.box::after {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  width: 60px;
+  height: 30px;
+  background-image: repeating-linear-gradient(-45deg, rgba(124, 249, 249, .5) 0 5px, transparent 5px 10px);
+  border-left: 2px dashed rgba(0, 0, 0, .1);
+  border-right: 2px dashed rgba(0, 0, 0, .1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  padding: 0.25em 2em;
+  color: #65513f;
+  transform: translateX(-50%) rotate(-5deg);
+  content: '';
+  z-index: 1;
+}
+
+.box p {
+  color: #333;
+  line-height: 2.3;
 }

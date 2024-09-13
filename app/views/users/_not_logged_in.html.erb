@@ -1,0 +1,46 @@
+<div class = "text-center mt-20 mb-10">
+    <span class = "text-3xl mt-20">新</span>
+    <span class = "text-3xl mt-20">規</span>
+    <span class = "text-3xl mt-20">登</span>
+    <span class = "text-3xl mt-20">録</span>
+  </div>
+
+
+<div class="mt-4 blackbord w-[70%] max-w-[900px]">
+
+  <% if @user.errors.any? %>
+    <% @user.errors.each do |error| %>
+      <ul class="text-[#FF79D2]">
+      <li><%= error.full_message %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 lg:text-xl md:text-base sm:text-sm ">
+      <%= form_with(model: @user) do |f| %>
+      <div class="mb-5">
+        <%= f.label :name %>
+        <%= f.text_field :name ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
+      <div class="mb-5">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "bg-[#006633] block w-full  border  border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none" %>
+      </div>
+      <div class="mb-5">
+        <%= f.label :password %>
+        <%= f.password_field :password ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
+      <div class="mb-5">
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation ,class: "bg-[#006633] block w-full  border border-[#ffff6b] focus:border-blue-500 w-80 h-10 focus:outline-none"%>
+      </div>
+
+      <div  class="text-center hover:text-blue-500 cursor-pointer text-2xl">
+        <%= f.submit "新規作成" ,class:"cursor-pointer"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

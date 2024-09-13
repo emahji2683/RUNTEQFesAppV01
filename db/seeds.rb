@@ -1,17 +1,28 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-require "csv"
+require 'csv'
 
-CSV.foreach('db/seeds/csv/content.csv', headers: true) do |row|
-    ContentList.create(
-    title: row['title'],
-    repeat_content: row['repeat_content'],
-    repeat_times: row['repeat_times'])
+# CSVファイルからデータを読み込む
+user_csv_file = 'db/seeds/csv/user.csv'
+content_csv_file = 'db/seeds/csv/content.csv'
+
+# ユーザーデータのシード
+CSV.foreach(user_csv_file, headers: true) do |row|
+  User.find_or_create_by(id: row['id']) do |user|
+    user.name = row['name']
+    user.email = row['email']
+    user.password = row['password']
+    user.created_at = row['created_at']
+    user.updated_at = row['updated_at']
+  end
+end
+
+# ContentListデータのシード
+CSV.foreach(content_csv_file2, headers: true) do |row|
+  ContentList.find_or_create_by(id: row['id']) do |content|
+    content.title = row['title']
+    content.repeat_content = row['repeat_content']
+    content.repeat_times = row['repeat_times']
+    content.created_at = row['created_at']
+    content.updated_at = row['updated_at']
+    content.user_id = row['user_id']
+  end
 end

@@ -1,0 +1,24 @@
+<div class="bg-green-500 bg-opacity-100 p-2 relative z-20 h-20 flex ">
+  <%= link_to image_tag("ゴリゴリ_テキスト屋さん_1.png", class: "h-16 w-auto mr-4"), root_path, class: "flex-shrink-0" %>
+<% if logged_in? %>
+<div class="flex items-center  w-full">
+  <div class="ml-auto text-gray-100  flex z-20 bg-opacity-400 justify-between ">
+    <p class="text-right ml-auto mx-5"><%= "#{current_user.name}様ようこそ"%></p> 
+    <%= link_to "ログアウト", logout_path, class: "text-gray-100 z-20 bg-opacity-400 hover:text-blue-500 ", data: { turbo_method: :delete, turbo_confirm: "本当にログアウトしますか？" } %>
+
+  </div>
+</div>
+<% else %>
+  
+
+    <div class="flex items-center justify-between w-full">
+
+      
+
+      <div class="flex justify-end space-x-4 ml-auto">
+        <%= link_to "ログイン", login_path, class: "text-2xl text-gray-100 hover:text-blue-500" %>
+        <%= link_to "新規登録", signup_path, class: "text-2xl text-gray-100 hover:text-blue-500" %>
+      </div>
+    </div>
+  <% end %>
+</div>
