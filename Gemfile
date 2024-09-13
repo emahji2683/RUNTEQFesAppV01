@@ -60,6 +60,7 @@ end
 
 gem "rails-i18n"
 gem "bcrypt"
+gem "meta-tags"
 
 group :development do
   gem "pry-byebug"
