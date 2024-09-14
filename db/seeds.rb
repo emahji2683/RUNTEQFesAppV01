@@ -15,7 +15,7 @@ CSV.foreach(user_csv_file, headers: true) do |row|
   end
 end
 
-# ContentListデータのシード
+# ContentListデータのシー ド
 CSV.foreach(content_csv_file, headers: true) do |row|
   ContentList.find_or_create_by(id: row['id']) do |content|
     content.title = row['title']
