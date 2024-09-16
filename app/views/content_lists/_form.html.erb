@@ -14,17 +14,17 @@
   <%= form_with(model: content_list, local: true) do |form| %>
     <div class="flex flex-col px-5 ">
       <div class=" mb-5 ">
-        <%= form.label :title, "タイトル", class: "text-left block text-red-700 md:text-xl lg:text-2xl" %>
+        <%= form.label :title, class: "text-left block text-red-700 md:text-xl lg:text-2xl" %>
         <%= form.text_field :title, class: " bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus: outline-none " %>
       </div>
   
       <div class="mb-5 ">
-        <%= form.label :repeat_content, "繰り返すもの", class: "text-left block  md:text-xl lg:text-2xl" %>
+        <%= form.label :repeat_content, class: "text-left block  md:text-xl lg:text-2xl" %>
         <%= form.text_field :repeat_content, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus:outline-none" %>
       </div>
   
       <div class="">
-        <%= form.label :repeat_times, "繰り返す回数", class: "text-left block  md:text-xl lg:text-2xl" %>
+        <%= form.label :repeat_times, class: "text-left block  md:text-xl lg:text-2xl" %>
         <%= form.number_field :repeat_times, class: "bg-yellow-200 border-b-4 border-red-500 focus:border-blue-500 w-full h-10 focus:outline-none" %>
       </div>
   
