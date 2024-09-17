@@ -15,14 +15,14 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: 'https://runteqfesappv01-jf24.onrender.com/',
-        image: image_url('shingoricard.png'), # 配置するパスやファイル名によって変更すること
+        image: image_url('goricard.png'), # 配置するパスやファイル名によって変更すること
         local: 'ja-JP'
       },
       # Twitter用の設定を個別で設定する
       twitter: {
         card: 'summary_large_image', # Twitterで表示する場合は大きいカードにする
         site: '@', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
-        image: image_url('shingoricard.png') # 配置するパスやファイル名によって変更すること
+        image: image_url('goricard.png') # 配置するパスやファイル名によって変更すること
       }
     }
   end
