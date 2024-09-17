@@ -29,6 +29,7 @@ html {
 
 .btn-flat {
   display: inline-block;
+  width: auto;
   padding: 1.5rem 6rem;
   color: #fff;
   font-weight: bold;
@@ -41,10 +42,18 @@ html {
   transition: color 0.5s ease-in-out, background 0.3s ease-in-out;
 }
 
+@media (max-width: 768px){
+  .btn-flat{
+    padding: 1.5rem 2rem;
+  }
+}
+
+
 .btn-flat span {
   position: relative;
   z-index: 1;
 }
+
 
 .btn-flat:before {
   position: absolute;
@@ -58,6 +67,12 @@ html {
   transition: transform 0.5s ease-in-out;
 }
 
+@media (max-width: 768px){
+  .index-page-button .btn-flat:before{
+    transform: translateX(-120%) translateY(-15%) rotate(45deg);
+  }
+}
+
 .btn-flat:hover:before {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
@@ -65,6 +80,7 @@ html {
 .btn-flat:hover span {
   color: #000;
 }
+
 /*めくれたメモ風*/
 .box6 {
   padding: 1em; /*内側の余白*/
