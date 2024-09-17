@@ -72,20 +72,22 @@
         <%= link_to edit_content_list_path(@content_list),
                     class: "bg-pink-400 rounded hover:bg-pink-500 flex items-center space-x-1 px-2 py-1" do %>
           <span class="material-symbols-outlined text-white">edit</span>
-          <span>へんしゅう</span>
+          <span>編集</span>
         <% end %>
         
         <!-- 削除ボタン -->
         <%= button_to content_list_path(@content_list), class: "bg-pink-400 rounded hover:bg-pink-500 flex items-center space-x-1 px-2 py-1", method: :delete, data: { turbo_confirm: "本当に削除しますか？" } do %>
           <span class="material-symbols-outlined text-white">ink_eraser</span>
-          <span>しょうきょ</span>
+          <span>消去</span>
         <% end %>
       </div>
-    
+
       <!-- コンテンツ一覧ボタン -->
-      <%= render "shared/button", text: "コンテンツ一覧", path: content_lists_path %>
+        <div class="index-page-button">
+          <%= render "shared/button", text: "コンテンツ一覧", path: content_lists_path %>
+        </div>
+  </div>
 </div>
-    
 
 <script>
 document.getElementById("download").addEventListener("click", function() {
